@@ -8,10 +8,10 @@
 
 #import "FKARosterTableViewController.h"
 #import "FKADetailsViewController.h"
+#import "FKAPersons.h"
 
 @interface FKARosterTableViewController ()
 
-@property (nonatomic, strong) NSMutableArray *students;
 
 @end
 
@@ -29,19 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    
+    FKAPersons *roster = [[FKAPersons alloc] init];
     
-    
-    
-    self.students = [[NSMutableArray alloc]init];
-    
-    // Load students from plist
-    NSString *filePath = [[NSBundle mainBundle]pathForResource:@"Bootcamp" ofType:@"plist"];
-    NSMutableArray *dataArray = [NSMutableArray arrayWithContentsOfFile:filePath];
-    for (NSDictionary *dict in dataArray) {
-        NSString *namez = [dict objectForKey:@"name"];
-        //NSLog(@"%@", namez);
-        [self.students addObject:namez]; //add each name to the "students" array
-        }
+    self.students = [NSMutableArray arrayWithArray: [roster loadStudentsList]];
+    //NSLog(@" I hope I see this: %@", self.students);
     
     // Set pull to refresh
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
@@ -75,45 +67,27 @@
     
     cell.textLabel.text = [self.students objectAtIndex:indexPath.row];
     
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"codeFellowsLogo" ofType:@"png"];
+    UIImage *image = [[UIImage alloc] initWithContentsOfFile: filePath];
+    cell.imageView.image = image;
+    
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
 
 
 
 #pragma mark - Navigation
 
-// In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"pushToDetails"]) {
-        //FKADetailsViewController *detailsView = [segue destinationViewController];
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow]; //trying to get student name to set as details view title
-        NSLog(@"%ld", (long)indexPath.row);
-        
+        FKADetailsViewController *detailsView = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        detailsView.title = [self.students objectAtIndex:indexPath.row];
     }
 }
 
