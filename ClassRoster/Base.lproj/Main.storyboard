@@ -52,11 +52,13 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
+                                    <barButtonItem width="127" style="plain" systemItem="fixedSpace" id="37y-ee-jPD"/>
                                     <barButtonItem style="done" systemItem="camera" id="ZqM-3B-NF6">
                                         <connections>
                                             <action selector="cameraButtonPushed:" destination="qZP-RQ-Vxf" id="gCA-l9-b1L"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="141" style="plain" systemItem="fixedSpace" id="BIc-dN-qgt"/>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xY-T1-QBg">
