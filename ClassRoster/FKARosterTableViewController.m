@@ -29,16 +29,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    
-    FKAPersons *roster = [[FKAPersons alloc] init];
     
-    self.students = [NSMutableArray arrayWithArray: [roster loadStudentsList]];
-    //NSLog(@" I hope I see this: %@", self.students);
+    self.students = [[[FKAPersons alloc] init] loadStudentsList];
+    NSLog(@"%@", self.students[0]);
     
     // Set pull to refresh
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
     refreshControl.tintColor = [UIColor lightGrayColor];
     self.refreshControl = refreshControl;
+    
+    self.myCell = [[UITableViewCell alloc]init];
     
    }
 
@@ -70,14 +70,15 @@
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"codeFellowsLogo" ofType:@"png"];
     UIImage *image = [[UIImage alloc] initWithContentsOfFile: filePath];
+    
     cell.imageView.image = image;
+    cell.imageView.layer.masksToBounds = NO;
+    cell.imageView.clipsToBounds = YES;
+    cell.imageView.layer.cornerRadius = 21.0f;
+    
     
     return cell;
 }
-
-
-
-
 
 
 #pragma mark - Navigation

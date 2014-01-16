@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FKADetailsViewController : UIViewController
+@interface FKADetailsViewController : UIViewController <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
+- (IBAction)cameraButtonPushed:(id)sender;
+
+
 
 @end

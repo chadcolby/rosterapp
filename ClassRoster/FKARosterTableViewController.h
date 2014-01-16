@@ -11,5 +11,6 @@
 @interface FKARosterTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *students;
+@property (nonatomic, strong) UITableViewCell *myCell;
 
 @end

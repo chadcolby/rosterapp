@@ -11,7 +11,7 @@
 @interface FKAPersons : NSObject
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) UIImage *profilePic;
+@property (nonatomic, strong) UIImage *profilePicture;
 @property (nonatomic, strong) NSMutableArray *students;
 
 - (NSMutableArray *)loadStudentsList;
