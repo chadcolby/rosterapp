@@ -20,7 +20,7 @@
         NSString *name = [tempDict objectForKey:@"name"];
         [self.students addObject:name];
     }
-    //NSLog(@"%@", self.students);
+    
     
     return self.students;
 }
