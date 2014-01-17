@@ -9,6 +9,7 @@
 #import "FKARosterTableViewController.h"
 #import "FKADetailsViewController.h"
 #import "FKAPersons.h"
+#import "FKARosterCell.h"
 
 @interface FKARosterTableViewController ()
 
@@ -21,7 +22,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -31,21 +32,23 @@
     [super viewDidLoad];
     
     self.students = [[[FKAPersons alloc] init] loadStudentsList];
-    NSLog(@"%@", self.students[0]);
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear: animated];
     
     // Set pull to refresh
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
-    refreshControl.tintColor = [UIColor lightGrayColor];
+    refreshControl.tintColor = [UIColor blueColor];
     self.refreshControl = refreshControl;
     
-    self.myCell = [[UITableViewCell alloc]init];
-    
-   }
+}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    
 }
 
 #pragma mark - Table view data source
@@ -63,18 +66,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    FKARosterCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [self.students objectAtIndex:indexPath.row];
+    cell.nameLabel.text = [self.students objectAtIndex:indexPath.row];
     
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"codeFellowsLogo" ofType:@"png"];
     UIImage *image = [[UIImage alloc] initWithContentsOfFile: filePath];
     
-    cell.imageView.image = image;
-    cell.imageView.layer.masksToBounds = NO;
-    cell.imageView.clipsToBounds = YES;
-    cell.imageView.layer.cornerRadius = 21.0f;
+    cell.smallPicture.image = image;
+//    cell.smallPicture.layer.masksToBounds = NO;
+//    cell.smallPicture.clipsToBounds = YES;
+//    cell.smallPicture.layer.cornerRadius = 21.0f;
+ 
+
     
     
     return cell;

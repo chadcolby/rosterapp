@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8D3C59931886D1EB0089AEE4 /* FKADetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3C59921886D1EB0089AEE4 /* FKADetailsViewController.m */; };
 		8D3C59951886D51D0089AEE4 /* Bootcamp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D3C59941886D51D0089AEE4 /* Bootcamp.plist */; };
+		8D442E1B18897C02004DD8AE /* FKARosterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D442E1A18897C02004DD8AE /* FKARosterCell.m */; };
 		8D88225018873BE8007A3B65 /* FKAPersons.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D88224F18873BE8007A3B65 /* FKAPersons.m */; };
 		8D8822521887466C007A3B65 /* codeFellowsLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D8822511887466C007A3B65 /* codeFellowsLogo.png */; };
 		8DD300411885DFF300ECD8A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD300401885DFF300ECD8A1 /* Foundation.framework */; };
@@ -41,6 +42,8 @@
 		8D3C59911886D1EB0089AEE4 /* FKADetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKADetailsViewController.h; sourceTree = "<group>"; };
 		8D3C59921886D1EB0089AEE4 /* FKADetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKADetailsViewController.m; sourceTree = "<group>"; };
 		8D3C59941886D51D0089AEE4 /* Bootcamp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Bootcamp.plist; sourceTree = "<group>"; };
+		8D442E1918897C02004DD8AE /* FKARosterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKARosterCell.h; sourceTree = "<group>"; };
+		8D442E1A18897C02004DD8AE /* FKARosterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKARosterCell.m; sourceTree = "<group>"; };
 		8D88224E18873BE8007A3B65 /* FKAPersons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKAPersons.h; sourceTree = "<group>"; };
 		8D88224F18873BE8007A3B65 /* FKAPersons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKAPersons.m; sourceTree = "<group>"; };
 		8D8822511887466C007A3B65 /* codeFellowsLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = codeFellowsLogo.png; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				8D3C59921886D1EB0089AEE4 /* FKADetailsViewController.m */,
 				8DD300751885E23300ECD8A1 /* FKARosterTableViewController.h */,
 				8DD300761885E23300ECD8A1 /* FKARosterTableViewController.m */,
+				8D442E1918897C02004DD8AE /* FKARosterCell.h */,
+				8D442E1A18897C02004DD8AE /* FKARosterCell.m */,
 				8D88224E18873BE8007A3B65 /* FKAPersons.h */,
 				8D88224F18873BE8007A3B65 /* FKAPersons.m */,
 				8DD300581885DFF300ECD8A1 /* Images.xcassets */,
@@ -269,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DD300771885E23300ECD8A1 /* FKARosterTableViewController.m in Sources */,
+				8D442E1B18897C02004DD8AE /* FKARosterCell.m in Sources */,
 				8D88225018873BE8007A3B65 /* FKAPersons.m in Sources */,
 				8DD3004D1885DFF300ECD8A1 /* main.m in Sources */,
 				8D3C59931886D1EB0089AEE4 /* FKADetailsViewController.m in Sources */,

@@ -12,17 +12,17 @@
 
 -(NSMutableArray *)loadStudentsList
 {
-    self.students = [[NSMutableArray alloc] init];
+    self.masterRoster = [[NSMutableArray alloc] init];
     
     NSString *pListFilePath = [[NSBundle mainBundle] pathForResource:@"Bootcamp" ofType:@"plist"];
     NSMutableArray *arrayOfStudents = [NSMutableArray arrayWithContentsOfFile:pListFilePath];
     for (NSDictionary *tempDict in arrayOfStudents) {
         NSString *name = [tempDict objectForKey:@"name"];
-        [self.students addObject:name];
+        [self.masterRoster addObject:name];
     }
     
     
-    return self.students;
+    return self.masterRoster;
 }
 
 @end

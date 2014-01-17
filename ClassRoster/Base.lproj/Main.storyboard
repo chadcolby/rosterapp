@@ -13,14 +13,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="ofA-6q-FtE">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="47" id="ofA-6q-FtE" customClass="FKARosterCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ofA-6q-FtE" id="kcC-OT-2FN">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="46"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h67-Ct-psR">
+                                            <rect key="frame" x="68" y="0.0" width="219" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x93-yf-7la">
+                                            <rect key="frame" x="20" y="3" width="40" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="nameLabel" destination="h67-Ct-psR" id="JAG-qj-z0g"/>
+                                    <outlet property="smallPicture" destination="x93-yf-7la" id="Hdi-qi-HAG"/>
                                     <segue destination="qZP-RQ-Vxf" kind="push" identifier="pushToDetails" id="Wze-Mo-Yd6"/>
                                 </connections>
                             </tableViewCell>
@@ -30,7 +45,7 @@
                             <outlet property="delegate" destination="jQ1-s5-8ps" id="yPx-O9-uzh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Roster" id="hzy-jW-3mW"/>
+                    <navigationItem key="navigationItem" title="Roster" id="meC-Uj-PgB"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGj-6i-YXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,6 +85,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="details" id="cn4-J4-a3A">
                         <barButtonItem key="backBarButtonItem" title="Roster" id="Nqc-Iu-Gvg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="dVU-QB-Xp2">
+                            <connections>
+                                <action selector="unwindToRosterView:" destination="qZP-RQ-Vxf" id="3nD-4u-K3V"/>
+                                <segue destination="jQ1-s5-8ps" kind="push" identifier="backToRoster" id="Odv-FV-dHp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="studentImage" destination="7xY-T1-QBg" id="yBo-lf-w6l"/>
@@ -123,6 +144,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Wze-Mo-Yd6"/>
+        <segue reference="5zq-D0-doE"/>
+        <segue reference="Odv-FV-dHp"/>
     </inferredMetricsTieBreakers>
 </document>

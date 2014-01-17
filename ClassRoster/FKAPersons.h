@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) UIImage *profilePicture;
-@property (nonatomic, strong) NSMutableArray *students;
+@property (nonatomic, strong) NSMutableArray *masterRoster;
 
 - (NSMutableArray *)loadStudentsList;
 

@@ -77,10 +77,16 @@
         self.studentImage.clipsToBounds = YES;
         self.studentImage.layer.cornerRadius = 140.0f;
         
-//        FKAPersons *person = [[FKAPersons alloc] init];
-//        UIImage *littleImage = [[UIImage alloc] initWithCGImage:self.studentImage.image.CGImage];
         
     }];
-    
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"backToRoster"]) {
+        FKARosterTableViewController *destination = [segue destinationViewController];
+        
+    }
+}
+
 @end
