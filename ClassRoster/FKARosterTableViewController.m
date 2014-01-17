@@ -70,18 +70,14 @@
     
     cell.nameLabel.text = [self.students objectAtIndex:indexPath.row];
     
-    
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"codeFellowsLogo" ofType:@"png"];
     UIImage *image = [[UIImage alloc] initWithContentsOfFile: filePath];
     
     cell.smallPicture.image = image;
-//    cell.smallPicture.layer.masksToBounds = NO;
-//    cell.smallPicture.clipsToBounds = YES;
-//    cell.smallPicture.layer.cornerRadius = 21.0f;
+    cell.smallPicture.layer.masksToBounds = NO;
+    cell.smallPicture.layer.cornerRadius = 21.0f;
+    cell.smallPicture.clipsToBounds = YES;
  
-
-    
-    
     return cell;
 }
 
@@ -97,6 +93,9 @@
     }
 }
 
- 
+- (IBAction)unwindToRoster:(UIStoryboardSegue *)segue
+{
+    
+}
 
 @end

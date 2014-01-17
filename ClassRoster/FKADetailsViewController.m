@@ -12,7 +12,7 @@
 
 @interface FKADetailsViewController ()
 
-@property (strong, nonatomic) IBOutlet UIImageView *studentImage;
+@property (weak, nonatomic) IBOutlet UIImageView *studentImage;
 
 @end
 
@@ -75,18 +75,34 @@
         self.studentImage.image = [info objectForKey:UIImagePickerControllerEditedImage];
         self.studentImage.layer.masksToBounds = YES;
         self.studentImage.clipsToBounds = YES;
-        self.studentImage.layer.cornerRadius = 140.0f;
+        self.studentImage.layer.cornerRadius = 90.0f;
         
         
     }];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (IBAction)doneButtonPushed:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"backToRoster"]) {
-        FKARosterTableViewController *destination = [segue destinationViewController];
+    NSString *githubHandle = [self.githubHandle.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *twitterHandle = [self.twitterHandle.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if ([githubHandle length] == 0 || [twitterHandle length] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Crap!" message:@"Please enter your Github and Twitter info." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        
+        [alert show];
+    } else {
         
     }
+    NSLog(@"%@ and %@", twitterHandle, githubHandle );
+    NSData *testData = [self saveStudentData];
+    NSLog(@"%@", testData);
+}
+
+- (NSData *)saveStudentData
+{
+    //FKAPersons *selectedPerson = [[FKAPersons alloc]init];
+    NSData *photoData = UIImagePNGRepresentation(self.studentImage.image);
+    return photoData;
 }
 
 @end

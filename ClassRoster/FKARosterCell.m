@@ -16,8 +16,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.smallPicture.layer.masksToBounds = YES;
-        self.smallPicture.layer.cornerRadius = 20.0f;
+//        self.smallPicture.layer.masksToBounds = YES;
+//        self.smallPicture.layer.cornerRadius = 20.0f;
         
     }
     

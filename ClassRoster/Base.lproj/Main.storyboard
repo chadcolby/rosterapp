@@ -77,9 +77,21 @@
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xY-T1-QBg">
-                                <rect key="frame" x="20" y="89" width="280" height="280"/>
+                                <rect key="frame" x="70" y="76" width="180" height="180"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Github" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VwJ-Ao-Av1">
+                                <rect key="frame" x="90" y="282" width="140" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Twitter" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JR3-9R-KC0">
+                                <rect key="frame" x="90" y="336" width="140" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="twitter"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -87,16 +99,19 @@
                         <barButtonItem key="backBarButtonItem" title="Roster" id="Nqc-Iu-Gvg"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="dVU-QB-Xp2">
                             <connections>
-                                <action selector="unwindToRosterView:" destination="qZP-RQ-Vxf" id="3nD-4u-K3V"/>
-                                <segue destination="jQ1-s5-8ps" kind="push" identifier="backToRoster" id="Odv-FV-dHp"/>
+                                <action selector="doneButtonPushed:" destination="qZP-RQ-Vxf" id="nEQ-dw-y9J"/>
+                                <segue destination="66M-sq-Bsk" kind="unwind" unwindAction="unwindToRoster:" id="w7Q-6k-YAG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="githubHandle" destination="VwJ-Ao-Av1" id="BwM-qZ-m7y"/>
                         <outlet property="studentImage" destination="7xY-T1-QBg" id="yBo-lf-w6l"/>
+                        <outlet property="twitterHandle" destination="JR3-9R-KC0" id="2QW-w6-dUw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVi-YV-U95" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="66M-sq-Bsk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1621" y="48"/>
         </scene>
@@ -145,6 +160,5 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="5zq-D0-doE"/>
-        <segue reference="Odv-FV-dHp"/>
     </inferredMetricsTieBreakers>
 </document>

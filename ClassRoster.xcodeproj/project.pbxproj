@@ -128,15 +128,10 @@
 				8DD3004F1885DFF300ECD8A1 /* FKAAppDelegate.h */,
 				8DD300501885DFF300ECD8A1 /* FKAAppDelegate.m */,
 				8DD300521885DFF300ECD8A1 /* Main.storyboard */,
-				8D3C59911886D1EB0089AEE4 /* FKADetailsViewController.h */,
-				8D3C59921886D1EB0089AEE4 /* FKADetailsViewController.m */,
-				8DD300751885E23300ECD8A1 /* FKARosterTableViewController.h */,
-				8DD300761885E23300ECD8A1 /* FKARosterTableViewController.m */,
-				8D442E1918897C02004DD8AE /* FKARosterCell.h */,
-				8D442E1A18897C02004DD8AE /* FKARosterCell.m */,
-				8D88224E18873BE8007A3B65 /* FKAPersons.h */,
-				8D88224F18873BE8007A3B65 /* FKAPersons.m */,
 				8DD300581885DFF300ECD8A1 /* Images.xcassets */,
+				8DF041471889DF9C00CBE2E6 /* Views */,
+				8DF041441889DF2100CBE2E6 /* Model */,
+				8DF041461889DF3800CBE2E6 /* Controllers */,
 				8DD300471885DFF300ECD8A1 /* Supporting Files */,
 			);
 			path = ClassRoster;
@@ -171,6 +166,35 @@
 				8DD300681885DFF300ECD8A1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8DF041441889DF2100CBE2E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8D88224E18873BE8007A3B65 /* FKAPersons.h */,
+				8D88224F18873BE8007A3B65 /* FKAPersons.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8DF041461889DF3800CBE2E6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8DD300751885E23300ECD8A1 /* FKARosterTableViewController.h */,
+				8DD300761885E23300ECD8A1 /* FKARosterTableViewController.m */,
+				8D3C59911886D1EB0089AEE4 /* FKADetailsViewController.h */,
+				8D3C59921886D1EB0089AEE4 /* FKADetailsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8DF041471889DF9C00CBE2E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8D442E1918897C02004DD8AE /* FKARosterCell.h */,
+				8D442E1A18897C02004DD8AE /* FKARosterCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

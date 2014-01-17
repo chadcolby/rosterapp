@@ -12,6 +12,12 @@
 
 - (IBAction)cameraButtonPushed:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UITextField *githubHandle;
+@property (weak, nonatomic) IBOutlet UITextField *twitterHandle;
 
+- (IBAction)doneButtonPushed:(id)sender;
+
+- (NSData *)saveStudentData;
 
 @end
+    
