@@ -9,6 +9,7 @@
 #import "FKADetailsViewController.h"
 #import "FKARosterTableViewController.h"
 #import "FKAPersons.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface FKADetailsViewController ()
 
@@ -22,7 +23,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+   
     }
     return self;
 }
@@ -30,7 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.title = self.person.name;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,6 +79,13 @@
         self.studentImage.clipsToBounds = YES;
         self.studentImage.layer.cornerRadius = 90.0f;
         
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+        NSString *documentPath = [paths objectAtIndex:0];
+        NSString *personName = [NSString stringWithFormat:@"%@.png", self.person.name];
+        NSString *filePath = [documentPath stringByAppendingString:personName];
+        
+        NSData *PNGData = UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerEditedImage]);
+        [PNGData writeToFile:filePath atomically:YES];
         
     }];
 }
@@ -93,9 +102,8 @@
     } else {
         
     }
-    NSLog(@"%@ and %@", twitterHandle, githubHandle );
-    NSData *testData = [self saveStudentData];
-    NSLog(@"%@", testData);
+    //NSLog(@"%@ and %@", twitterHandle, githubHandle );
+//    [self saveStudentData];
 }
 
 - (NSData *)saveStudentData
@@ -104,5 +112,6 @@
     NSData *photoData = UIImagePNGRepresentation(self.studentImage.image);
     return photoData;
 }
+
 
 @end

@@ -26,6 +26,8 @@
 		8DD3006A1885DFF300ECD8A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8DD300681885DFF300ECD8A1 /* InfoPlist.strings */; };
 		8DD3006C1885DFF300ECD8A1 /* ClassRosterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3006B1885DFF300ECD8A1 /* ClassRosterTests.m */; };
 		8DD300771885E23300ECD8A1 /* FKARosterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD300761885E23300ECD8A1 /* FKARosterTableViewController.m */; };
+		8DF041491889EA4500CBE2E6 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF041481889EA4500CBE2E6 /* AssetsLibrary.framework */; };
+		8DF0414C1889FA3000CBE2E6 /* FKAModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF0414B1889FA3000CBE2E6 /* FKAModelController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,9 @@
 		8DD3006B1885DFF300ECD8A1 /* ClassRosterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassRosterTests.m; sourceTree = "<group>"; };
 		8DD300751885E23300ECD8A1 /* FKARosterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKARosterTableViewController.h; sourceTree = "<group>"; };
 		8DD300761885E23300ECD8A1 /* FKARosterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKARosterTableViewController.m; sourceTree = "<group>"; };
+		8DF041481889EA4500CBE2E6 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		8DF0414A1889FA3000CBE2E6 /* FKAModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKAModelController.h; sourceTree = "<group>"; };
+		8DF0414B1889FA3000CBE2E6 /* FKAModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKAModelController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DF041491889EA4500CBE2E6 /* AssetsLibrary.framework in Frameworks */,
 				8DD300431885DFF300ECD8A1 /* CoreGraphics.framework in Frameworks */,
 				8DD300451885DFF300ECD8A1 /* UIKit.framework in Frameworks */,
 				8DD300411885DFF300ECD8A1 /* Foundation.framework in Frameworks */,
@@ -114,6 +120,7 @@
 		8DD3003F1885DFF300ECD8A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DF041481889EA4500CBE2E6 /* AssetsLibrary.framework */,
 				8DD300401885DFF300ECD8A1 /* Foundation.framework */,
 				8DD300421885DFF300ECD8A1 /* CoreGraphics.framework */,
 				8DD300441885DFF300ECD8A1 /* UIKit.framework */,
@@ -180,6 +187,8 @@
 		8DF041461889DF3800CBE2E6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8DF0414A1889FA3000CBE2E6 /* FKAModelController.h */,
+				8DF0414B1889FA3000CBE2E6 /* FKAModelController.m */,
 				8DD300751885E23300ECD8A1 /* FKARosterTableViewController.h */,
 				8DD300761885E23300ECD8A1 /* FKARosterTableViewController.m */,
 				8D3C59911886D1EB0089AEE4 /* FKADetailsViewController.h */,
@@ -302,6 +311,7 @@
 				8D88225018873BE8007A3B65 /* FKAPersons.m in Sources */,
 				8DD3004D1885DFF300ECD8A1 /* main.m in Sources */,
 				8D3C59931886D1EB0089AEE4 /* FKADetailsViewController.m in Sources */,
+				8DF0414C1889FA3000CBE2E6 /* FKAModelController.m in Sources */,
 				8DD300511885DFF300ECD8A1 /* FKAAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

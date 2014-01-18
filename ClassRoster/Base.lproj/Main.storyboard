@@ -9,7 +9,7 @@
             <objects>
                 <tableViewController id="jQ1-s5-8ps" customClass="FKARosterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ZzA-Ns-7VI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -60,11 +60,11 @@
                         <viewControllerLayoutGuide type="bottom" id="eBq-eq-tHY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pDh-Cw-jZv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aue-o7-zHS">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aue-o7-zHS">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem width="127" style="plain" systemItem="fixedSpace" id="37y-ee-jPD"/>
@@ -76,17 +76,17 @@
                                     <barButtonItem width="141" style="plain" systemItem="fixedSpace" id="BIc-dN-qgt"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xY-T1-QBg">
-                                <rect key="frame" x="70" y="76" width="180" height="180"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7xY-T1-QBg">
+                                <rect key="frame" x="70" y="78" width="180" height="180"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Github" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VwJ-Ao-Av1">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Github" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VwJ-Ao-Av1">
                                 <rect key="frame" x="90" y="282" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Twitter" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JR3-9R-KC0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Twitter" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JR3-9R-KC0">
                                 <rect key="frame" x="90" y="336" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -94,6 +94,21 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JR3-9R-KC0" firstAttribute="centerX" secondItem="aue-o7-zHS" secondAttribute="centerX" id="0Iy-77-8lh"/>
+                            <constraint firstItem="aue-o7-zHS" firstAttribute="top" secondItem="JR3-9R-KC0" secondAttribute="bottom" constant="70" id="16d-E7-ol6"/>
+                            <constraint firstItem="aue-o7-zHS" firstAttribute="leading" secondItem="pDh-Cw-jZv" secondAttribute="leading" id="1SS-h7-B2k"/>
+                            <constraint firstItem="7xY-T1-QBg" firstAttribute="centerX" secondItem="VwJ-Ao-Av1" secondAttribute="centerX" id="2QX-zX-8M2"/>
+                            <constraint firstItem="VwJ-Ao-Av1" firstAttribute="trailing" secondItem="JR3-9R-KC0" secondAttribute="trailing" id="OJg-xb-qi2"/>
+                            <constraint firstItem="7xY-T1-QBg" firstAttribute="top" secondItem="E8D-Fn-xhC" secondAttribute="bottom" constant="14" id="ONS-mP-rga"/>
+                            <constraint firstItem="JR3-9R-KC0" firstAttribute="top" secondItem="VwJ-Ao-Av1" secondAttribute="bottom" constant="24" id="RRt-4F-QgO"/>
+                            <constraint firstItem="7xY-T1-QBg" firstAttribute="leading" secondItem="pDh-Cw-jZv" secondAttribute="leading" constant="70" id="WH4-Hz-Yt2"/>
+                            <constraint firstAttribute="trailing" secondItem="aue-o7-zHS" secondAttribute="trailing" id="Yfc-3X-DEG"/>
+                            <constraint firstAttribute="bottom" secondItem="aue-o7-zHS" secondAttribute="bottom" id="fYG-Df-7Xs"/>
+                            <constraint firstItem="VwJ-Ao-Av1" firstAttribute="leading" secondItem="pDh-Cw-jZv" secondAttribute="leading" constant="90" id="kTz-c9-hZc"/>
+                            <constraint firstItem="VwJ-Ao-Av1" firstAttribute="leading" secondItem="JR3-9R-KC0" secondAttribute="leading" id="poO-IE-syS"/>
+                            <constraint firstItem="VwJ-Ao-Av1" firstAttribute="top" secondItem="7xY-T1-QBg" secondAttribute="bottom" constant="24" id="tKb-DA-gg1"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="details" id="cn4-J4-a3A">
                         <barButtonItem key="backBarButtonItem" title="Roster" id="Nqc-Iu-Gvg"/>
@@ -156,9 +171,9 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5zq-D0-doE"/>
+        <segue reference="Wze-Mo-Yd6"/>
     </inferredMetricsTieBreakers>
 </document>

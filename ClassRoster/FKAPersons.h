@@ -8,14 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FKAPersons : NSObject
+@interface FKAPersons : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) UIImage *profilePicture;
 @property (nonatomic, strong) NSString *githubHandle;
 @property (nonatomic, strong) NSString *twitterHandle;
-@property (nonatomic, strong) NSMutableArray *masterRoster;
-
-- (NSMutableArray *)loadStudentsList;
 
 @end

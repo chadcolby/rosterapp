@@ -10,9 +10,11 @@
 #import "FKADetailsViewController.h"
 #import "FKAPersons.h"
 #import "FKARosterCell.h"
+#import "FKAModelController.h"
 
 @interface FKARosterTableViewController ()
 
+@property (strong, nonatomic) FKAModelController *myModelController;
 
 @end
 
@@ -31,8 +33,7 @@
 {
     [super viewDidLoad];
     
-    self.students = [[[FKAPersons alloc] init] loadStudentsList];
-
+    self.myModelController = [[FKAModelController alloc]init];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -60,7 +61,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.students.count;
+    return self.myModelController.masterRoster.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,7 +69,8 @@
     static NSString *CellIdentifier = @"Cell";
     FKARosterCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.nameLabel.text = [self.students objectAtIndex:indexPath.row];
+    FKAPersons *tempStudent = [self.myModelController.masterRoster objectAtIndex:indexPath.row];
+    cell.nameLabel.text = tempStudent.name;
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"codeFellowsLogo" ofType:@"png"];
     UIImage *image = [[UIImage alloc] initWithContentsOfFile: filePath];
@@ -89,7 +91,8 @@
     if ([[segue identifier] isEqualToString:@"pushToDetails"]) {
         FKADetailsViewController *detailsView = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        detailsView.title = [self.students objectAtIndex:indexPath.row];
+  
+        detailsView.person = self.myModelController.masterRoster[indexPath.row];
     }
 }
 

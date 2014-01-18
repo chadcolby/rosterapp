@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FKAPersons.h"
 
 @interface FKADetailsViewController : UIViewController <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -14,10 +15,13 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *githubHandle;
 @property (weak, nonatomic) IBOutlet UITextField *twitterHandle;
+@property (weak, nonatomic) FKAPersons *person;
 
 - (IBAction)doneButtonPushed:(id)sender;
 
 - (NSData *)saveStudentData;
+
+
 
 @end
     

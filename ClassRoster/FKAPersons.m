@@ -10,19 +10,32 @@
 
 @implementation FKAPersons
 
--(NSMutableArray *)loadStudentsList
+#pragma mark - NSCoding
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self.masterRoster = [[NSMutableArray alloc] init];
-    
-    NSString *pListFilePath = [[NSBundle mainBundle] pathForResource:@"Bootcamp" ofType:@"plist"];
-    NSMutableArray *arrayOfStudents = [NSMutableArray arrayWithContentsOfFile:pListFilePath];
-    for (NSDictionary *tempDict in arrayOfStudents) {
-        NSString *name = [tempDict objectForKey:@"name"];
-        [self.masterRoster addObject:name];
+    self = [super init];
+    if (!self) {
+        return nil;
     }
     
+    self.name = [aDecoder decodeObjectForKey:@"name"];
+    self.profilePicture = [aDecoder decodeObjectForKey:@"image"];
+    self.githubHandle = [aDecoder decodeObjectForKey:@"github"];
+    self.twitterHandle = [aDecoder decodeObjectForKey:@"twitter"];
     
-    return self.masterRoster;
+    return self;
 }
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.name forKey:@"name"];
+    [aCoder encodeObject:self.profilePicture forKey:@"image"];
+    [aCoder encodeObject:self.githubHandle forKey:@"github"];
+    [aCoder encodeObject:self.twitterHandle forKey:@"twitter"];
+    
+    
+}
+
 
 @end
