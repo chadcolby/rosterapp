@@ -34,6 +34,7 @@
     [super viewDidLoad];
     
     self.myModelController = [[FKAModelController alloc]init];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
