@@ -46,6 +46,8 @@
     refreshControl.tintColor = [UIColor blueColor];
     self.refreshControl = refreshControl;
     
+    [self.tableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,6 +101,9 @@
 
 - (IBAction)unwindToRoster:(UIStoryboardSegue *)segue
 {
+    //FKAPersons *selectedStudent = [[FKAPersons alloc]init];
+   
+    [self.myModelController saveData];
     
 }
 

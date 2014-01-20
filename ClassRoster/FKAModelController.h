@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSMutableArray *masterRoster;
 
+- (void) saveData;
+
 @end

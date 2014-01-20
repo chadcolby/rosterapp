@@ -114,7 +114,8 @@
         
         NSData *PNGData = UIImagePNGRepresentation([info objectForKey:UIImagePickerControllerEditedImage]);
         [PNGData writeToFile:filePath atomically:YES];
-        
+        [NSKeyedArchiver archiveRootObject:PNGData toFile:@""];
+        NSLog(@"Data here: %@", PNGData);
     }];
 }
 
